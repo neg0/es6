@@ -6,4 +6,4 @@ const sd = new User(
     "hadi@github.com"
 );
 
-console.log(sd);
+console.log(sd.toJSON());

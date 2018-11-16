@@ -4,7 +4,7 @@
   "description": "Me and ES6! I will organise this for training my team",
   "main": "index.js",
   "scripts": {
-    "build": "babel  ./src --experimental --source-maps-inline -d ./build"
+    "build": "babel ./src --experimental --source-maps-inline -d ./build"
   },
   "repository": {
     "type": "git",
