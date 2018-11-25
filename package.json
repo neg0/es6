@@ -4,7 +4,8 @@
   "description": "Me and ES6! I will organise this for training my team",
   "main": "index.js",
   "scripts": {
-    "build": "babel ./src --experimental --source-maps-inline -d ./build"
+    "build": "babel ./src --experimental --source-maps-inline -d ./build",
+    "test": "jest ./build"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
   "homepage": "https://github.com/neg0/es6#readme",
   "dependencies": {},
   "devDependencies": {
+    "@negative0/jasmine-dataprovider": "^1.0.1",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0"
   }
 }

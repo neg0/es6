@@ -4,8 +4,11 @@ export const Validator = (date, coupon) => {
         date > new Date();
 };
 
+import *  as using from '@negative0/jasmine-dataprovider';
 
+using({}, (data, descr) => {
 
+});
 
 // Refactored according to OOP
 export class Validator {
