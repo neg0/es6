@@ -1,19 +1,22 @@
 import { Name } from './Common/Name';
 import { Email } from './Common/Email';
 import { ExpirationDate } from "./Common/ExpirationDate";
+import {Status} from "./Common/Status";
 
 export class Subscription {
     /**
      * @param {number} id
      * @param {Name} name
      * @param {Email} email
+     * @param {Status} status
      * @param {ExpirationDate} expirationDate
      */
-    constructor(id, name, email, expirationDate) {
+    constructor(id, name, email, expirationDate, status) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.expirationDate = expirationDate;
+        this.status = status
     }
 
     /**
@@ -28,7 +31,8 @@ export class Subscription {
             id,
             new Name(name),
             new Email(email),
-            new ExpirationDate(expirationDate)
+            new ExpirationDate(expirationDate),
+            new Status(expirationDate)
         );
     }
 
@@ -46,6 +50,7 @@ export class Subscription {
             name: this.name.value,
             email: this.email.value,
             expiration: this.expirationDate.value.toLocaleDateString(),
+            status:this.status.value,
         };
     }
 
