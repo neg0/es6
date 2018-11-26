@@ -7,16 +7,17 @@ export class Status extends ValueObjectInterface {
             expired: 'EXPIRED',
         }
     };
+
     /**
      * @param {Date} expirationDate
      */
     constructor(expirationDate) {
         super();
 
+        this._value = Status.STATUSES.expired;
         if (expirationDate > new Date()) {
             this._value = Status.STATUSES.active;
         }
-        this._value = Status.STATUSES.expired;
     }
 
     get value() {
