@@ -5,6 +5,7 @@ export class Status extends ValueObjectInterface {
         return {
             active: 'ACTIVE',
             expired: 'EXPIRED',
+            suspended: 'SUSPENDED',
         }
     };
 
@@ -22,5 +23,9 @@ export class Status extends ValueObjectInterface {
 
     get value() {
         return this._value;
+    }
+
+    suspend() {
+        this._value = Status.STATUSES.suspended;
     }
 }

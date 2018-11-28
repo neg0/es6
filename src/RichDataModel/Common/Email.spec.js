@@ -1,0 +1,32 @@
+import { Email } from "./Email";
+const MOCK_VALID_EMAIL = 'name@mailprovider.com';
+const MOCK_INVALID_EMAILS = {
+    'name.mailprovider': "should Invalidate",
+    'namemailprovider.com': "should Invalidate",
+    'namemail@provider': "should Invalidate",
+    'namemail.provider.com': "should Invalidate",
+};
+
+describe("Testing Email ValueObject", () => {
+    /**
+     * @type {Email}
+     */
+    let sut = undefined;
+
+    beforeEach(() => {
+        sut = new Email(MOCK_VALID_EMAIL);
+    });
+
+    it("should validate email as valid and return the passed in email address", () => {
+        expect(sut.value).toEqual(MOCK_VALID_EMAIL);
+    });
+
+    describe.skip("when invalid email address passed", () => {
+        for (let email in MOCK_INVALID_EMAILS) {
+            it(MOCK_INVALID_EMAILS[email] + " when given email address is: `" + email + "`", () => {
+                sut = new Email(email);
+                expect(sut).toThrow("Email address is not valid");
+            });
+        }
+    });
+});

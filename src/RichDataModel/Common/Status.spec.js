@@ -1,3 +1,4 @@
+
 import {Status} from "./Status";
 
 /**
@@ -37,7 +38,18 @@ describe("testing status value given", () => {
         });
 
         it('should return status `Inactive` when expirationDate is in the past', () => {
-            expect(sut.value).toEqual(Status.STATUSES.inactive);
+            expect(sut.value).toEqual(Status.STATUSES.expired);
+        });
+    });
+
+    describe('check if status can be changed to `suspended`', () => {
+        beforeEach(() => {
+            sut = new Status(dateGenerator(5));
+            sut.suspend();
+        });
+
+        it('should change the status to suspended', () => {
+            expect(sut.value).toEqual(Status.STATUSES.suspended);
         });
     });
 });

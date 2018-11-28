@@ -2,7 +2,9 @@ export class ValidatorInterface {
     /**
      * @return {boolean}
      */
-    isValid();
+    isValid() {
+        throw new Error('isValid() is not implemented');
+    }
 }
 
 export class ExistenceValidator extends ValidatorInterface {
