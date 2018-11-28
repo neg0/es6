@@ -1,7 +1,7 @@
 import { Name } from './Common/Name';
 import { Email } from './Common/Email';
 import { ExpirationDate } from "./Common/ExpirationDate";
-import {Status} from "./Common/Status";
+import { Status } from "./Common/Status";
 
 export class Subscription {
     /**

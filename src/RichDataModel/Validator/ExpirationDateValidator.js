@@ -20,6 +20,13 @@ export class ExpirationDateValidator extends ValidatorAbstract {
      * @inheritDoc
      */
     isValid() {
-        return this.date <= new Date("+1 day");
+        let tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + ExpirationDateValidator.ONE_DAY);
+
+        return this.date >= new Date(tomorrow);
+    }
+
+    static get ONE_DAY() {
+        return 1;
     }
 }

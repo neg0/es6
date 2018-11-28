@@ -8,10 +8,6 @@ export class Name extends ValueObjectInterface {
     constructor(name) {
         super();
 
-        if ('string' !== typeof name) {
-            throw new Error('Wrong type');
-        }
-
         const nameValidator = new NameValidator(name);
         if (true !== nameValidator.isValid()) {
             throw new Error(nameValidator.errorMessage);

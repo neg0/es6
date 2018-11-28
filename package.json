@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel ./src --experimental --source-maps-inline -d ./build",
-    "test": "npm run build && jest ./build"
+    "test": "jest ./src"
   },
   "repository": {
     "type": "git",
@@ -29,5 +29,13 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "jest": "^23.6.0"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
 }

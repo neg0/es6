@@ -1,5 +1,5 @@
 import { ValidatorAbstract } from "./ValidatorAbstract";
-import {AlphabetOnlyValidator} from "./AlphabetOnlyValidator";
+import { AlphabetOnlyValidator } from "./AlphabetOnlyValidator";
 
 export class NameValidator extends ValidatorAbstract {
     /**
