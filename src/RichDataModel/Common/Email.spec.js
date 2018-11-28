@@ -21,11 +21,15 @@ describe("Testing Email ValueObject", () => {
         expect(sut.value).toEqual(MOCK_VALID_EMAIL);
     });
 
-    describe.skip("when invalid email address passed", () => {
+    describe("when invalid email address passed", () => {
         for (let email in MOCK_INVALID_EMAILS) {
             it(MOCK_INVALID_EMAILS[email] + " when given email address is: `" + email + "`", () => {
-                sut = new Email(email);
-                expect(sut).toThrow("Email address is not valid");
+                try {
+                    sut = new Email(email);
+                } catch (e) {
+                    expect(e).toBeInstanceOf(Error);
+                    expect(e.message).toEqual("Email address is not valid");
+                }
             });
         }
     });

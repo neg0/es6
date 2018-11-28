@@ -20,13 +20,13 @@ export class AlphabetOnlyValidator extends ValidatorAbstract {
      * @inheritDoc
      */
     isValid() {
-        return AlphabetOnlyValidator.regex.test(this.name);
+        return new RegExp(AlphabetOnlyValidator.regex).test(this.name);
     }
 
     /**
      * @return {string}
      */
     static get regex() {
-        return "/^[a-zA-Z-,]+(\\s{0,1}[a-zA-Z-, ])*$/";
+        return "^[a-zA-Z-,]+(\\s{0,1}[a-zA-Z-, ])*$";
     }
 }
