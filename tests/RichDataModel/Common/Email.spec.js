@@ -1,4 +1,5 @@
-import { Email } from "./Email";
+import { Email } from "../../../src/RichDataModel/Common/Email";
+
 const MOCK_VALID_EMAIL = 'name@mailprovider.com';
 const MOCK_INVALID_EMAILS = {
     'name.mailprovider': "should Invalidate",

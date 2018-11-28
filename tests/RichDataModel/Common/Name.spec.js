@@ -1,4 +1,4 @@
-import { Name } from "./Name";
+import { Name } from "../../../src/RichDataModel/Common/Name";
 const MOCK_VALID_NAME = 'Hadi Ta';
 const MOCK_INVALID_NAME_LIST = [
     "j0sef",

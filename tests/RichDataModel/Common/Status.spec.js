@@ -1,5 +1,4 @@
-
-import {Status} from "./Status";
+import {Status} from "../../../src/RichDataModel/Common/Status";
 
 /**
  * @param {number} days

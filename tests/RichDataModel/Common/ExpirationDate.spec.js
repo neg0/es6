@@ -1,4 +1,4 @@
-import { ExpirationDate } from "./ExpirationDate";
+import { ExpirationDate } from "../../../src/RichDataModel/Common/ExpirationDate";
 
 /**
  * @param {number} days

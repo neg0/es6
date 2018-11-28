@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel ./src --experimental --source-maps-inline -d ./build",
-    "test": "jest ./src"
+    "test": "jest ./tests"
   },
   "repository": {
     "type": "git",
