@@ -23,14 +23,14 @@ export class NameValidator extends ValidatorAbstract {
      */
     isValid() {
         if (true !== this.alphabetValidator.isValid()) {
-            this._error = "Contains illegal character";
+            this._error = this.alphabetValidator.errorMessage;
         }
 
         if (this.name.length < 2) {
             this._error = "Does not minimum length requirement";
         }
 
-        if (this.name.length > 128) {
+        if (this.name.length > 32) {
             this._error = "Exceeds maximum length of name";
         }
 

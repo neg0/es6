@@ -6,6 +6,24 @@ const MOCK_INVALID_NAME_LIST = [
     "Curt!s",
     "Curti$",
 ];
+const MOCK_INVALID_LENGTH_NAMES = [
+    {
+        desciption: "should invalidate due to be less than minimum requirement",
+        name: "H",
+    },
+    {
+        desciption: "should invalidate due to be less than minimum requirement",
+        name: "A",
+    },
+    {
+        desciption: "should invalidate due to be more than maximum requirement",
+        name: "ThisStringIsMoreThanThirtyTwoCharacterLong",
+    },
+    {
+        desciption: "should invalidate due to be more than maximum requirement",
+        name: "ThisStringIsAlsoMoreThanThirtyTwoCharacterLong",
+    },
+];
 
 describe("Testing Name valueObject", () => {
     /** @type Name */
@@ -34,8 +52,29 @@ describe("Testing Name valueObject", () => {
                     sut = new Name(MOCK_INVALID_NAME_LIST[name]);
                 } catch (e) {
                     expect(e).toBeInstanceOf(Error);
+                    expect(e.message).toEqual("Name is not valid, only alphabet and spaces are allowed");
                 }
             });
         }
+    });
+
+    describe("checking throwing error with invalid name length", () => {
+        it("should invalidate due to be less than minimum requirement", () => {
+            try {
+                sut = new Name("H");
+            } catch (e) {
+                expect(e).toBeInstanceOf(Error);
+                expect(e.message).toEqual("Does not minimum length requirement");
+            }
+        });
+
+        it("should invalidate due to be more than maximum requirement", () => {
+            try {
+                sut = new Name("ThisStringIsMoreThanThirtyTwoCharacterLong");
+            } catch (e) {
+                expect(e).toBeInstanceOf(Error);
+                expect(e.message).toEqual("Exceeds maximum length of name");
+            }
+        });
     });
 });
